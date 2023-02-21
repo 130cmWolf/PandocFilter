@@ -1,0 +1,5 @@
+from: markdown+hard_line_breaks
+input-files:
+  - README.md
+
+output-file: output.docx

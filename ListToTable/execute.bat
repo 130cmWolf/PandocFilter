@@ -1,0 +1,1 @@
+pandoc -d default.yml --lua-filter list2table.lua 
