@@ -2,7 +2,7 @@
 
 ## how to use
 
-The first bullet point is the table header.
+The first bullet point is the table header.  
 The second and subsequent bullet points are the table body.
 
 ## example
@@ -19,6 +19,7 @@ Running this will generate `output.docx`
 use chatGPT Generate Sample Data
 
 :::{.table}
+
 * Name
     * Gender
     * Birthdate
@@ -43,6 +44,7 @@ use chatGPT Generate Sample Data
     * Male
     * 1992/07/15
     * Arizona
+
 :::
 
 ## numbered lists
@@ -50,6 +52,7 @@ use chatGPT Generate Sample Data
 use chatGPT Generate Sample Data
 
 :::{.table}
+
 * Name
     * Gender
     * Birthdate
@@ -74,4 +77,5 @@ use chatGPT Generate Sample Data
     * Female
     * 2000/11/30
     * Michigan
+
 :::
