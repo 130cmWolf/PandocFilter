@@ -49,7 +49,9 @@ use chatGPT Generate Sample Data
 
 ## numbered lists
 
-use chatGPT Generate Sample Data
+You can automatically number the items,  
+but the first one should be the header,  
+so please use a regular bullet point for it.
 
 :::{.table}
 
