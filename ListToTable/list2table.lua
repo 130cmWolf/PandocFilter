@@ -20,52 +20,51 @@ function AnalyzeList(row_List, table_row)
 end
 
 
-function Div(e)
-    if e.classes[1] == "table" then
-        -- print(e)
+function Div(element)
+    if element.classes[1] == "table" then
         local aligns = {}
         local widths = {}
-        local headerList = {}
-        local bodyList = {}
+        local header_list = {}
+        local body_list = {}
         local header = false
-        local OrderList = false
-        local OrderListCount = 1
-        for index, value in ipairs(e.content) do
-            if value.t == "OrderedList" and not OrderList then
-                OrderList = true
-                table.insert(headerList, 1, "No.")
+        local has_ordered_list = false
+        local ordered_list_count = 1
+
+        for _, value in ipairs(element.content) do
+            if value.t == "OrderedList" and not has_ordered_list then
+                has_ordered_list = true
+                table.insert(header_list, 1, "No.")
                 table.insert(aligns, pandoc.AlignDefault)
                 table.insert(widths, 0)
             end
 
-            for i, v in ipairs(value.content) do
-                if header == false then
-                    AnalyzeList(v, headerList)
-                    for i = 1, #headerList do
+            for _, row in ipairs(value.content) do
+                if not header then
+                    AnalyzeList(row, header_list)
+                    for i = 1, #header_list do
                         table.insert(aligns, pandoc.AlignDefault)
                         table.insert(widths, 0)
                     end
                     header = true
                 else
-                    local bodyrow = {}
-                    if OrderList == true then
-                        table.insert(bodyrow, pandoc.Str(OrderListCount))
-                        OrderListCount = OrderListCount + 1
+                    local body_row = {}
+                    if has_ordered_list then
+                        table.insert(body_row, pandoc.Str(ordered_list_count))
+                        ordered_list_count = ordered_list_count + 1
                     end
-                    AnalyzeList(v, bodyrow)
-                    table.insert(bodyList, bodyrow)
+                    AnalyzeList(row, body_row)
+                    table.insert(body_list, body_row)
                 end
             end
-            
         end
 
         local caption = ""
-        simple_table = pandoc.SimpleTable(
+        local simple_table = pandoc.SimpleTable(
             caption,
             aligns,
             widths,
-            headerList,
-            bodyList
+            header_list,
+            body_list
         )
         return pandoc.utils.from_simple_table(simple_table)
     end
