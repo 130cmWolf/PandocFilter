@@ -224,7 +224,9 @@ line breaks between lists
 
 :::
 
-# table in lists
+# lists in table
+
+
 
 :::{.table}
 
@@ -232,30 +234,42 @@ line breaks between lists
     * Gender
     * Birthdate
     * State
-
 *   * Madison Martinez
     * Female
     * 2001/03/17
     * * Florida
       * New York
-
 *   * William Brown
     * Male
     * 1990/09/02
     * * New York
-
 *   * Daniel Rodriguez
     * Male
     * 1992/07/15
     * 
       * Arizona
       * New York
-
 *   * Olivia Jackson
     * Female
     * 1993/12/08
     * Plaintext and Lists
         * Georgia
         * North Carolina
+*   * Olivia Jackson
+    * Female
+    * 1993/12/08
+    * Using Markdown syntax when trying to stop using Markdown is counterproductive ;D
+    
+      | ago | State |
+      | --- | --- |
+      | 1 | Georgia |
+      | 3 | North Carolina |
+*   * Olivia Jackson
+    * Female
+    * 1993/12/08
+    * | ago | State |
+      | --- | --- |
+      | 1 | Georgia |
+      | 3 | North Carolina |
 
 :::
