@@ -223,3 +223,39 @@ line breaks between lists
     * Michigan
 
 :::
+
+# table in lists
+
+:::{.table}
+
+*   * Name
+    * Gender
+    * Birthdate
+    * State
+
+*   * Madison Martinez
+    * Female
+    * 2001/03/17
+    * * Florida
+      * New York
+
+*   * William Brown
+    * Male
+    * 1990/09/02
+    * * New York
+
+*   * Daniel Rodriguez
+    * Male
+    * 1992/07/15
+    * 
+      * Arizona
+      * New York
+
+*   * Olivia Jackson
+    * Female
+    * 1993/12/08
+    * Plaintext and Lists
+        * Georgia
+        * North Carolina
+
+:::

@@ -9,9 +9,7 @@ function AnalyzeList(row_List, table_row)
             for _, val2 in pairs(val) do
                 if type(val2) ~= "function" then
                     for _, val3 in ipairs(val2) do
-                        for _, val4 in pairs(val3) do
-                            table.insert(table_row, val4)
-                        end
+                        table.insert(table_row, val3)
                     end
                 end
             end
